@@ -1,0 +1,14 @@
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.db
+*.db-*
+*.log
+*.tar
+*.tar.gz
+private/
+backups/
+wazuh-passwords.txt
+wazuh-install-files.tar

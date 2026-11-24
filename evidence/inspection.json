@@ -1,0 +1,116 @@
+{
+  "checked_on": "2026-11-24",
+  "deployment": {
+    "hypervisor": "Proxmox VE",
+    "type": "single_vm",
+    "vcpu": 4,
+    "ram_GiB": 8,
+    "virtual_disk_GiB": 40
+  },
+  "versions": {
+    "wazuh_manager": "4.14.8",
+    "wazuh_indexer": "4.14.8",
+    "wazuh_dashboard": "4.14.8",
+    "filebeat": "7.10.2"
+  },
+  "services": {
+    "wazuh_manager": "active",
+    "wazuh_indexer": "active",
+    "wazuh_dashboard": "active",
+    "filebeat": "active"
+  },
+  "agents": {
+    "connected_remote_agents": 3,
+    "active_local_manager_source": true
+  },
+  "filebeat_output_test": {
+    "exit_code": 0,
+    "connected": true
+  },
+  "indexer_health": {
+    "status": "green",
+    "number_of_nodes": 1,
+    "active_primary_shards": 181,
+    "unassigned_shards": 0
+  },
+  "alert_indices": {
+    "count": 49,
+    "documents": 81890,
+    "health_counts": {
+      "green": 49
+    }
+  },
+  "recent_alert_sample": {
+    "events": 1541,
+    "latest_timestamp": "2026-11-24T21:59:00.112+0000",
+    "levels": {
+      "7": 1520,
+      "4": 11,
+      "5": 5,
+      "3": 5
+    },
+    "groups": [
+      [
+        "ossec",
+        1514
+      ],
+      [
+        "syscheck",
+        1407
+      ],
+      [
+        "syscheck_file",
+        1407
+      ],
+      [
+        "syscheck_entry_modified",
+        1397
+      ],
+      [
+        "rootcheck",
+        98
+      ],
+      [
+        "syslog",
+        27
+      ],
+      [
+        "dpkg",
+        11
+      ],
+      [
+        "config_changed",
+        11
+      ],
+      [
+        "local",
+        10
+      ],
+      [
+        "apparmor",
+        10
+      ]
+    ],
+    "agents_reporting": 4,
+    "scope": "bounded tail of current alert file, not a fixed time window"
+  },
+  "verified_endpoint_configuration": {
+    "endpoints_inspected": [
+      "hypervisor_agent",
+      "media_container_agent"
+    ],
+    "fim_frequency_seconds": 43200,
+    "sca_interval": "12h",
+    "syscollector_interval": "1h"
+  },
+  "limitations": [
+    "Raspberry Pi endpoint collection configuration was not inspected.",
+    "No controlled detection exercise was executed during this documentation task.",
+    "Other retention mechanisms and restore recoverability require further verification."
+  ],
+  "latest_indexed_alert_timestamp": "2026-11-24T22:03:00.115+0000",
+  "index_lifecycle": {
+    "indices_examined": 49,
+    "with_assigned_policy": 0
+  }
+}
