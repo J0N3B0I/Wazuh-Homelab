@@ -2,7 +2,7 @@
 
 ## Deployment boundary
 
-The central services share one dedicated Proxmox VM. The Proxmox host, media LXC, and Raspberry Pi each have a remote agent. The manager is also represented as a local source in its agent listing.
+The central services share one dedicated Proxmox VM. The Proxmox host, media LXC, Raspberry Pi, and dedicated FIM test VM each have a remote agent. The FIM endpoint was added by the completed detection project. The manager is also represented as a local source in its agent listing.
 
 | Component | Responsibility | Operational dependency |
 | --- | --- | --- |

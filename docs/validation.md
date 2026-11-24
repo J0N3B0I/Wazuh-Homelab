@@ -48,7 +48,7 @@ The aggregate machine-readable record is available in [inspection.json](../evide
 
 - The Raspberry Pi connection was verified. Its endpoint collection configuration was not inspected during this pass.
 - Application-specific Docker log coverage requires confirmation of the relevant sources and integrations.
-- File-change and login-detection exercises in the roadmap are proposed work. They have not been executed as part of this documentation task.
+- The initial inspection preceded the FIM project. The subsequent [completed FIM exercise](https://github.com/J0N3B0I/Wazuh-FIM-Lab) adds a fourth remote agent and supplies verified indexed detection evidence. The login-detection exercise remains planned.
 - A custom rules file exists, but file presence does not establish a tested custom detection.
 - None of the 49 inspected alert indices has an assigned ISM policy. Other possible cleanup mechanisms require separate verification before establishing retention coverage.
 - The VM's 40 GiB disk is smaller than the quickstart's 50 GB storage reference for a small deployment with 90 days of data.

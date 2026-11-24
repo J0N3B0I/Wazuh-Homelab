@@ -1,8 +1,10 @@
 # Security project roadmap
 
-These exercises are proposed extensions to the monitored homelab. Complete each in a dedicated test guest and record its actual results before presenting it as a finished project.
+This roadmap tracks completed and proposed exercises. The first project is complete, and the remaining projects are planned extensions.
 
 ## Project 1 — File integrity detection
+
+**Completed November 24, 2026.** Creation, modification, and deletion were verified through the manager and indexer. [Project documentation and evidence](https://github.com/J0N3B0I/Wazuh-FIM-Lab)
 
 **Objective** — Follow a controlled file change from an endpoint to an indexed alert and an investigation note.
 

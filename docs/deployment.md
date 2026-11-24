@@ -18,7 +18,7 @@ Retain generated credentials and certificates securely. Verify services individu
 
 Install a compatible agent on each endpoint, configure its manager destination, complete enrollment, and start the agent. The manager should show an active connection and a current last-seen time.
 
-This lab's remote endpoints are the Proxmox host, media container, and Raspberry Pi. The manager-local source is counted separately. Check an endpoint's collection configuration as well as its connection status to establish coverage. [Agent enrollment](https://documentation.wazuh.com/current/user-manual/agent/agent-enrollment/index.html)
+This lab's remote endpoints are the Proxmox host, media container, Raspberry Pi, and dedicated FIM test VM. The FIM endpoint uses scoped forwarding across an isolated lab network. The manager-local source is counted separately. Check an endpoint's collection configuration as well as its connection status to establish coverage. [Agent enrollment](https://documentation.wazuh.com/current/user-manual/agent/agent-enrollment/index.html)
 
 ## Establish collection and baseline findings
 

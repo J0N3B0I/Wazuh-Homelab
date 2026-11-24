@@ -2,7 +2,7 @@
 
 **Endpoint visibility · Security event analysis · File integrity monitoring · Incident investigation**
 
-A documented Wazuh deployment running in Proxmox VE, with agents monitoring the hypervisor, a media container, and a Raspberry Pi. This project explains how telemetry becomes searchable security alerts and how to operate and investigate the platform.
+A documented Wazuh deployment running in Proxmox VE, with agents monitoring the hypervisor, a media container, a Raspberry Pi, and a dedicated FIM lab endpoint. This project explains how telemetry becomes searchable security alerts and how to operate and investigate the platform.
 
 Collection, analysis, and indexing continue while the dashboard is closed. Daily dashboard use is independent of the background monitoring workload.
 
@@ -16,13 +16,17 @@ Verified on **November 24, 2026**.
 | VM allocation | 4 CPU cores, 8 GiB RAM, 40 GiB virtual disk |
 | Wazuh manager / indexer / dashboard | 4.14.8; all three services active |
 | Filebeat | 7.10.2; service active and output connection test passed |
-| Remote agents | 3 connected agents |
+| Remote agents | 4 connected agents after the FIM project |
 | Manager-local source | Active local monitoring, listed separately from remote agents |
 | Indexer | One node, green health, zero unassigned shards |
 | Alert storage | 49 alert indices with 81,890 indexed documents at inspection |
 | Index lifecycle | No assigned ISM policy on the 49 inspected alert indices |
 
-These figures describe the inspection snapshot. [Validation and limitations](docs/validation.md) records how they were checked.
+The alert storage counts describe the initial inspection snapshot. The agent count includes the subsequently completed FIM project. [Validation and limitations](docs/validation.md) records how they were checked.
+
+## Completed detection project
+
+The [File Integrity Monitoring Lab](https://github.com/J0N3B0I/Wazuh-FIM-Lab) is complete. A dedicated Ubuntu VM produced verified creation, modification, and deletion alerts through both the manager and indexer, with matching hashes and targeted network-boundary checks. Read the [project summary](https://github.com/J0N3B0I/Wazuh-FIM-Lab/blob/main/SUMMARY.md) for its implementation and measured results.
 
 ## How the platform works
 
@@ -31,6 +35,7 @@ flowchart LR
     Host["Proxmox host agent"] -->|Encrypted TCP 1514| Manager
     Media["Media LXC agent"] -->|Encrypted TCP 1514| Manager
     Pi["Raspberry Pi agent"] -->|Encrypted TCP 1514| Manager
+    Lab["FIM lab agent"] -->|Encrypted TCP 1514 through scoped forwarding| Manager
     Local["Manager-local monitoring"] --> Manager
     subgraph VM["Wazuh VM"]
         Manager["Wazuh manager<br/>Decode and match rules"] --> Alerts["JSON alert output"]
