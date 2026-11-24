@@ -33,9 +33,9 @@ flowchart LR
     Pi["Raspberry Pi agent"] -->|Encrypted TCP 1514| Manager
     Local["Manager-local monitoring"] --> Manager
     subgraph VM["Wazuh VM"]
-        Manager["Wazuh manager\nDecode and match rules"] --> Alerts["JSON alert output"]
-        Alerts --> Filebeat["Filebeat\nForward alerts"]
-        Filebeat -->|TLS| Indexer["Wazuh indexer\nStore and search"]
+        Manager["Wazuh manager<br/>Decode and match rules"] --> Alerts["JSON alert output"]
+        Alerts --> Filebeat["Filebeat<br/>Forward alerts"]
+        Filebeat -->|TLS| Indexer["Wazuh indexer<br/>Store and search"]
         Manager -.->|Inventory and vulnerability state| Indexer
         Dashboard["Wazuh dashboard"] -->|Search indexed data| Indexer
         Dashboard -->|Agent and manager operations| API["Manager API"]
